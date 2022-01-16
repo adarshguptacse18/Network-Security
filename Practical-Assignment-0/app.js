@@ -20,5 +20,12 @@ function calculateComplement(c) {
 const encodeDecode = (str) => [...str].map(calculateComplement).join('');
 
 const [ plainInput, encryptedInput ] = document.getElementsByName('encryptData');
-plainInput.oninput = () => encryptedInput.value = encodeDecode(plainInput.value);
-encryptedInput.oninput = () => plainInput.value = encodeDecode(encryptedInput.value);
+const lastOperation = document.getElementsByName('lastOperation')[0];
+plainInput.oninput = () => {
+    encryptedInput.value = encodeDecode(plainInput.value);
+    lastOperation.textContent = "Enryption Successful";
+}
+encryptedInput.oninput = () => {
+    plainInput.value = encodeDecode(encryptedInput.value);
+    lastOperation.textContent = "Decryption Successful";
+}
