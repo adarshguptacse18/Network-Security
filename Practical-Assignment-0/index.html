@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <title>Network Security</title>
+
+    <style>
+        .bg-custom-1 {
+            background-color: #85144b;
+        }
+
+        .bg-custom-2 {
+            background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+        }
+
+        .promoting-card:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+  
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-md bg-custom-2">
+        <div class="container"><a class="navbar-brand" href="/index.html">Assignment-0</a></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+            aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse container" id="basicExampleNav1">
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="container" style="padding-top:25px">
+                    <div class="card" style="width: 500px;">
+                        <div class="card-body">
+                          <h5 class="card-title">Plain text</h5>
+                          <textarea name="encryptData" cols="40" rows="5"></textarea>
+                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                        </div>
+                      </div>
+                
+                </div>
+            </div>
+            <div class="column">
+                <div class="container" style="padding-top:25px">
+                    <div class="card" style="width: 500px;">
+                        <div class="card-body">
+                          <h5 class="card-title">Encrypted Text</h5>
+                          <textarea name="encryptData" cols="40" rows="5"></textarea>
+                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                          <!-- <button class="btn btn-primary">Start Decryption</button> -->
+                        </div>
+                      </div>
+                
+                </div>
+            </div>
+        </div>
+        <div class = "container">
+            <h3>Instructions</h3>
+            <ul>
+                <li>If you write in 1st box, then the encrypted text will be shown in the second box</li>
+                <li>If you write in 2nd box, then the plain text text will be shown in the first box</li>
+                <li><h7>Algorithm:</h7> plainChar + encryptChar = 25 (0 - based indexing)</li>
+
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script src="app.js"></script>
+
+</html>
