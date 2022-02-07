@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <title>Network Security</title>
+    <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+    <style>
+        .bg-custom-1 {
+            background-color: #85144b;
+        }
+
+        .bg-custom-2 {
+            background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+        }
+
+        .promoting-card:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-md bg-custom-2">
+        <div class="container"><a class="navbar-brand" href="/index.html">Assignment-2</a></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+            aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse container" id="basicExampleNav1">
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 10px;">
+        <div class = "container">
+            <h10 name="lastOperation"></h10>
+        </div>
+        <div class = "card" style="padding: 20px;">
+            <div class = "container">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Plain Text</span>
+                    </div>
+                    <input type="text" id="plainText" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Key</span>
+                    </div>
+                    <input type="text" id="key" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Cipher Text</span>
+                    </div>
+                    <input type="text" id="cipherText" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width:max-content;"> 
+            <div class="row">
+                <div class="column">
+                    <button id="type1" type="button" class="btn btn-primary btn-lg btn-block  m-1">Five plaintext with hamming distance: 1</button>
+                </div>
+                <div class="column" style="margin-left: 10px">
+                        <button type="button" id="type2" class="btn btn-primary btn-lg btn-block  m-1">Five plaintext with different hamming distances</button>
+                </div>
+                <div class="column">
+                    <div class="container">
+                        <button type="button" id="type3" class="btn btn-primary btn-lg btn-block  m-1">Five keys with hamming distance: 1</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               
+            </div>
+   
+        </div>
+        
+      
+    </div>
+    <div class="container">
+        <div class = "container">
+            <div id="graphPlot"></div>
+        </div>
+        <div class = "container">
+            <div id="distances"></div>
+        </div>
+    </div>
+
+</body>
+<script src="utils.js"></script>
+<script src="des.js"></script>
+<script src="app.js"></script>
+
+</html>
