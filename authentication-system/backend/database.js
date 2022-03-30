@@ -1,17 +1,32 @@
 const { Client } = require('pg');
 
+// const client = new Client({
+//     "host": "localhost",
+//     "port": "5432",
+//     "user": "postgres",
+//     "password": "mysecretpassword",
+//     "database": "postgres",
+// })
 const client = new Client({
-    "host": "localhost",
-    "port": "5432",
+    "host": "network-security.cxsygoiicf98.ap-south-1.rds.amazonaws.com",
+    "post": "5432",
     "user": "postgres",
-    "password": "mysecretpassword",
+    "password": "postgres",
     "database": "postgres",
-})
+});
 
 
 async function init() {
     try {
         await client.connect();
+        await client.query("create table if not exists users (\n" +
+            "    username varchar(30) PRIMARY KEY,\n" +
+            "    g text,\n" +
+            "    n text,\n" +
+            "    y text,\n" +
+            "    requestArray text,\n" +
+            "    C text\n" +
+            ")");
         console.log("Connected to the database");
     } catch (e) {
         console.log(e.message);

@@ -1,4 +1,4 @@
-create table users(
+create table if not exists users (
     username varchar(30) PRIMARY KEY,
     g text,
     n text,
