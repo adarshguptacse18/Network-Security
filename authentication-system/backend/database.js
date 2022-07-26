@@ -1,18 +1,11 @@
 const { Client } = require('pg');
 
-// const client = new Client({
-//     "host": "localhost",
-//     "port": "5432",
-//     "user": "postgres",
-//     "password": "mysecretpassword",
-//     "database": "postgres",
-// })
 const client = new Client({
-    "host": "network-security.cxsygoiicf98.ap-south-1.rds.amazonaws.com",
+    "host": process.env.host,
     "post": "5432",
-    "user": "postgres",
-    "password": "postgres",
-    "database": "postgres",
+    "user": process.env.user,
+    "password": process.env.password,
+    "database": process.env.database,
 });
 
 

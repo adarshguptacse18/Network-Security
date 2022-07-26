@@ -1,10 +1,8 @@
 const express = require('express');
 const cors = require('cors')
-
 const database = require('./database');
 const {powerMod, getRandomInt, multiplyMod, getRandomPrime} = require("./utils");
 const app = express();
-
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,6 +30,7 @@ app.post('/saveUser', async (req, res) => {
     }
 });
 
+
 app.post('/saveUserSecret', async (req, res) => {
     const  { username, y } = req.body;
     await database.updateY(username, y);
@@ -39,13 +38,23 @@ app.post('/saveUserSecret', async (req, res) => {
 
 });
 
+/***
+ * This function retrieves g and n corresponding to username and returns it to the user.
+ */
 app.post('/loginRequest', async (req, res) => {
     const user = await database.getUser(req.body.username);
+    if(!user) {
+       return res.status(404).send("User Not Found");
+
+    }
     console.log(user);
     const {g, n} = user;
     res.send({g, n});
 });
 
+/***
+ * This Function Computes requestArray and saves C in the database.
+ */
 app.post('/loginRequest2', async (req, res) => {
     const { username, C } = req.body;
     let requestArray = "";
@@ -59,17 +68,18 @@ app.post('/loginRequest2', async (req, res) => {
     });
 });
 
+/***
+ * This Function is the main verification fuction. 
+ */
 app.post("/verifyLogin", async (req, res) => {
     try {
         const user = await database.getUser(req.body.username);
-        // const { username, g, n, y, c, requestarray } = await database.getUser(req.body.username);
         const { w, username } = req.body;
         const g = parseInt(user.g);
         const n = parseInt(user.n);
         const requestarray = user.requestarray;
         const y = JSON.parse(user.y);
         const c = JSON.parse(user.c);
-        console.log({g, y, n, c, requestarray});
 
         for(let i = 0; i < requestarray.length; i += 1) {
             const v2 = powerMod(g, w[i], n);
